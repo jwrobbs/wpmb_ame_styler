@@ -2,8 +2,8 @@
 /**
  * Plugin Name: WPMB AME Styler
  * Plugin URI: https://joshrobbs.com
- * Description: A plugin to style meta boxes in WordPress.
- * Version: 0.1.0
+ * Description: A plugin to add toggling to Admin Menu Editor plugin.
+ * Version: 1.0.0
  * Author: Josh Robbs
  * Author URI: https://joshrobbs.com
  * License: The Unlicense

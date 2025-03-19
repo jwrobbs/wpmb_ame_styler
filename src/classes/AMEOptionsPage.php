@@ -52,8 +52,26 @@ class AMEOptionsPage {
 			<h1>AME Options</h1>
 			<form method="post" action="options.php">
 				<?php
+				echo '<h2>Instructions</h2>';
+				$instructions = <<<EOS
+				<h4>Instructions</h4>
+				<p><strong>0. Plan</strong></p>
+				<p>You need to decide how you want the menu organized. Every section needs a header and a class. Keep it simple.</p>
+				<p>Example: I like to group my content together. It has a header called "Content" and a class prefix of "content".</p>
+				<p><strong>1. Add headers and arrange menu items.</strong></p>
+				<p>Use the Admin Menu Editor to create section headers. Set it to Target Page: none. Rearrange the menu items into the groups and order you want.</p>
+				<p><strong>2. Add classes</strong></p>
+				<p>Still in Admin Menu Editor, add classes to the headers and items.</p>
+				<p>The class for the headers is <the section's class>-menu-section-header. The class for the items is <the section's class>-menu-section-item.</p>
+				<p>Example: Based on my previous example, my header Content gets the class "content-menu-section-header". The menu items like Pages, Posts, etc. get the class "content-menu-section-item".</p>
+				<p>When x-menu-section-header is clicked, the visibility for x-menu-section-item is toggled.</p>
+				<p><strong>3. Customize</strong></p>
+				<p>The plugin has a basic options panel: 4 color options: header text , header background, active header text, and active header background.</p>
+				EOS;
+				echo wp_kses_post( $instructions );
 				settings_fields( $this->option_name );
 				do_settings_sections( $this->option_name );
+
 				submit_button();
 				?>
 			</form>
@@ -107,9 +125,12 @@ class AMEOptionsPage {
 	public function render_color_picker_field( $args ) {
 		$options = get_option( $this->option_name );
 		$value   = isset( $options[ $args['id'] ] ) ? esc_attr( $options[ $args['id'] ] ) : '';
-		?>
-		<input type="text" name="<?php echo $this->option_name . '[' . $args['id'] . ']'; ?>" value="<?php echo $value; ?>" class="color-picker" data-default-color="#ffffff" />
-		<?php
+
+		$input = <<<EOS
+		<input type="text" name="{$this->option_name}[{$args['id']}]" value="{$value}" class="color-picker" data-default-color="#ffffff" />
+		EOS;
+
+		echo $input; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -125,4 +146,3 @@ class AMEOptionsPage {
 		return $options;
 	}
 }
-

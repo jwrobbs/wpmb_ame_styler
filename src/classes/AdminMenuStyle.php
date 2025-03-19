@@ -55,15 +55,13 @@ class AdminMenuStyle {
 			There are no checks. If you put in an invalid color, it will do its
 			best to apply that color.
 		*/
-		$header_bg     = '#002244';
-		$header_text   = '#ffffff';
-		$a_header_bg   = '#820000';
-		$a_header_text = '#ffffff';
 
-		$header_bg     = $header_bg ?? '#002244';
-		$header_text   = $header_text ?? '#ffffff';
-		$a_header_bg   = $a_header_bg ?? '#820000';
-		$a_header_text = $a_header_text ?? '#ffffff';
+		$options = get_option( 'ame_options' );
+
+		$header_bg     = esc_attr( $options['background'] ) ?? '#002244';
+		$header_text   = esc_attr( $options['foreground'] ) ?? '#ffffff';
+		$a_header_bg   = esc_attr( $options['active_background'] ) ?? '#820000';
+		$a_header_text = esc_attr( $options['active_foreground'] ) ?? '#ffffff';
 
 		$style = <<<HTML
 			<style id='admin-menu-styler'>
@@ -96,9 +94,9 @@ class AdminMenuStyle {
 	public function enqueue_admin_assets() {
 		wp_enqueue_script(
 			'wpmb-admin-menu-style',
-			\WPMB_AME_STYLER_URL . 'js/admin-menu.js',
+			\WPMB_AME_STYLER_URL . 'src/js/admin-menu.js',
 			array(),
-			WPMB_AME_STYLER_PATH . 'js/admin-menu.js',
+			filemtime( WPMB_AME_STYLER_PATH . 'src/js/admin-menu.js' ),
 			true
 		);
 	}
