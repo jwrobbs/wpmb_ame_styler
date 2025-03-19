@@ -1,0 +1,17 @@
+.wpmb-admin-menu-settings__colors .acf-fields {
+	display: flex;
+}
+.wpmb-admin-menu-settings__color {
+	flex: 0 0 25%;
+}
+.wpmb-admin-menu-settings__classes .acf-fields {
+	display: flex;
+}
+.wpmb-admin-menu-settings__class {
+	flex: 0 0 50%;
+}
+
+div.acf-field.acf-field-message ul {
+	padding-left: 1rem;
+	list-style-type: circle !important;
+}

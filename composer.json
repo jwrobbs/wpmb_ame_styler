@@ -1,0 +1,19 @@
+{
+	"name": "jwrobbs/wpmb_ame_styler",
+	"description": "Adds some bells and whistles to WP admin menu.",
+	"type": "wordpress-plugin",
+	"license": "The Unlicense",
+	"autoload": {
+		"psr-4": {
+			"WPMB_AME_Styler\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Josh Robbs",
+			"email": "josh@joshrobbs.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {}
+}
