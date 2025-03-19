@@ -10,3 +10,8 @@ I'm modifying an old plugin. This shouldn't take long.
 
 - Church up this readme
 - Add message to activation.php
+- Add usage instructions
+  - Put them here and on the options page
+- Clean up output
+- Style options page
+- where do i want the options page?
