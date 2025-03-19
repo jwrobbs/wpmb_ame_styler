@@ -15,3 +15,5 @@ I'm modifying an old plugin. This shouldn't take long.
 - Clean up output
 - Style options page
 - where do i want the options page?
+- add better description
+- add update script
