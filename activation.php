@@ -18,7 +18,7 @@ function activate() {
 
 	$is_ame_active = \is_plugin_active( 'admin-menu-editor/menu-editor.php' );
 
-	if ( false === $is_ame_active() ) {
+	if ( false === $is_ame_active ) {
 		\deactivate_plugins( 'jwr-admin-menu-styler/index.php' );
 		// [] TODO: Add an admin notice.
 		exit;

@@ -3,7 +3,7 @@
  * Plugin Name: WPMB AME Styler
  * Plugin URI: https://joshrobbs.com
  * Description: A plugin to add toggling to Admin Menu Editor plugin.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Josh Robbs
  * Author URI: https://joshrobbs.com
  * License: The Unlicense
